@@ -24,5 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 
+.env
+.env.local
+
 # npm config vm fix (for my sandbox)
 .npmrc

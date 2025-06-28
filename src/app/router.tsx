@@ -8,6 +8,8 @@ import MainLayout from './layouts/main-layout';
 
 const Home = lazy(() => import('@/app/pages/home'));
 
+const NotFound = lazy(() => import('@/app/pages/not-found'));
+
 export const router = createBrowserRouter([
    {
       path: '/',
@@ -17,6 +19,10 @@ export const router = createBrowserRouter([
          {
             index: true,
             element: <Home />,
+         },
+         {
+            path: '*',
+            element: <NotFound />,
          },
       ],
    },
