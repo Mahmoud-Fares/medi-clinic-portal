@@ -9,7 +9,9 @@ type Props = {
 
 export const HeroHeader = ({ className }: Props) => (
    <header className={cn('', className)}>
-      <h1 className='text-center text-hero font-bold'>Healthcare</h1>
+      <h1 className='text-center text-hero font-bold leading-none'>
+         Healthcare
+      </h1>
 
       <HeroBadges />
    </header>
@@ -32,12 +34,15 @@ const HeroBadges = ({ className }: Props) => {
    return (
       <div
          className={cn(
-            'flex items-center justify-between gap-2 sm:justify-evenly sm:px-4 lg:px-8',
+            'relative top-4 flex flex-wrap items-center justify-evenly gap-2 sm:top-8 sm:px-4 lg:top-10 lg:px-8',
             className
          )}
       >
          {BADGES.map((badge) => (
-            <div className='flex items-center gap-3 rounded-full shadow-lg sm:px-4 sm:py-2 lg:px-6 lg:py-3'>
+            <div
+               key={badge.title}
+               className='flex items-center gap-3 rounded-full shadow-lg sm:px-4 sm:py-2 lg:px-6 lg:py-3'
+            >
                <Button
                   variant='secondary'
                   size='icon'

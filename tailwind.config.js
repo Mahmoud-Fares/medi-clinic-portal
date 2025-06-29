@@ -12,6 +12,7 @@ export default {
             hero: 'clamp(3rem, 1rem + 10vw, 15rem)',
          },
          screens: {
+            xs: '500px',
             hero: '960px',
          },
          borderRadius: {
