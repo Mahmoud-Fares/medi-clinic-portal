@@ -9,7 +9,7 @@ export default function MainLayout({ children }: Props) {
       <>
          <ScrollRestoration />
 
-         <div className='flex min-h-screen flex-col'>
+         <div className='flex min-h-screen flex-col font-roboto antialiased'>
             {children ?? <Outlet />}
          </div>
       </>

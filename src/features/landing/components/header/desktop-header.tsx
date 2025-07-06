@@ -1,4 +1,5 @@
 import { Menu, User, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/shared/components/ui/button';
 import { cn } from '@/shared/lib/utils';
@@ -17,6 +18,7 @@ export const DesktopHeader = ({
    toggleMobileMenu,
    className,
 }: Props) => {
+   const navigate = useNavigate();
    return (
       <div
          className={cn(
@@ -26,7 +28,7 @@ export const DesktopHeader = ({
       >
          <h1 className='text-2xl font-bold'>Medcare</h1>
 
-         <SearchInput className='xs:flex mx-4 hidden max-w-lg flex-1' />
+         <SearchInput className='mx-4 hidden max-w-lg flex-1 xs:flex' />
 
          <NavigationLinks className='hidden lg:flex' />
 
@@ -34,6 +36,7 @@ export const DesktopHeader = ({
             <Button
                variant='link'
                className={cn('items-center gap-1 transition-smooth')}
+               onClick={() => navigate('/login', { viewTransition: true })}
             >
                <span>Login</span>
                <span className='hidden text-lg lg:flex'>
